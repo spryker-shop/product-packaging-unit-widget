@@ -87,6 +87,10 @@
                         {% endwidget %}
                     {% endblock %}
 
+                    {% widget 'SspServicePointNameForItemWidget' args [data.node] only %}
+                    {% elsewidget 'ServicePointNameForItemWidget' args [data.node] only %}
+                    {% endwidget %}
+
                     {% widget 'SspAssetInfoForItemWidget' args [data.node] only %}
                     {% endwidget %}
 
