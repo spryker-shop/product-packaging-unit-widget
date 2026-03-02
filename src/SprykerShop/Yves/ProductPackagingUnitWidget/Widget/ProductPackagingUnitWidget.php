@@ -145,17 +145,11 @@ class ProductPackagingUnitWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @return string
-     */
     public static function getName(): string
     {
         return 'ProductPackagingUnitWidget';
     }
 
-    /**
-     * @return string
-     */
     public static function getTemplate(): string
     {
         return '@ProductPackagingUnitWidget/views/pdp-product-packaging-unit/pdp-product-packaging-unit.twig';
@@ -234,11 +228,6 @@ class ProductPackagingUnitWidget extends AbstractWidget
         return $minQuantityInBaseUnits;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductQuantityStorageTransfer|null $productQuantityStorageTransfer
-     *
-     * @return int
-     */
     protected function getMinQuantityInBaseUnit(
         ?ProductQuantityStorageTransfer $productQuantityStorageTransfer = null
     ): int {
@@ -250,22 +239,12 @@ class ProductPackagingUnitWidget extends AbstractWidget
         return $quantityMin;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer|null $productPackagingUnitStorageTransfer
-     *
-     * @return bool
-     */
     protected function isProductPackagingUnitSelfLead(?ProductPackagingUnitStorageTransfer $productPackagingUnitStorageTransfer): bool
     {
         return $productPackagingUnitStorageTransfer !== null
             && $productPackagingUnitStorageTransfer->getIdProduct() === $productPackagingUnitStorageTransfer->getIdLeadProduct();
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductViewTransfer $productViewTransfer
-     *
-     * @return void
-     */
     protected function addProductParameter(ProductViewTransfer $productViewTransfer): void
     {
         $this->addParameter(static::PARAMETER_PRODUCT, $productViewTransfer);
@@ -281,31 +260,16 @@ class ProductPackagingUnitWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_QUANTITY_OPTIONS, $quantityOptions);
     }
 
-    /**
-     * @param int $minQuantityInBaseUnit
-     *
-     * @return void
-     */
     protected function addMinQuantityInBaseUnitParameter(int $minQuantityInBaseUnit): void
     {
         $this->addParameter(static::PARAMETER_MIN_QUANTITY_IN_BASE_UNIT, $minQuantityInBaseUnit);
     }
 
-    /**
-     * @param float $minQuantityInSalesUnits
-     *
-     * @return void
-     */
     protected function addMinQuantityInSalesUnitsParameter(float $minQuantityInSalesUnits): void
     {
         $this->addParameter(static::PARAMETER_MIN_QUANTITY_IN_SALES_UNITS, $minQuantityInSalesUnits);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductMeasurementUnitTransfer|null $baseUnit
-     *
-     * @return void
-     */
     protected function addBaseUnitParameter(?ProductMeasurementUnitTransfer $baseUnit = null): void
     {
         $this->addParameter(static::PARAMETER_BASE_UNIT, $baseUnit);
@@ -331,22 +295,12 @@ class ProductPackagingUnitWidget extends AbstractWidget
         $this->addParameter(static::PARAMETER_LEAD_PRODUCT_SALES_UNIT, $leadProductSalesUnits);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer|null $productPackagingUnitStorageTransfer
-     *
-     * @return void
-     */
     protected function addProductPackagingUnitParameter(
         ?ProductPackagingUnitStorageTransfer $productPackagingUnitStorageTransfer = null
     ): void {
         $this->addParameter(static::PARAMETER_PRODUCT_PACKAGING_UNIT, $productPackagingUnitStorageTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer|null $productPackagingUnitStorageTransfer
-     *
-     * @return void
-     */
     protected function addPackagingUnitIsSelfLeadParameter(
         ?ProductPackagingUnitStorageTransfer $productPackagingUnitStorageTransfer = null
     ): void {
@@ -356,30 +310,17 @@ class ProductPackagingUnitWidget extends AbstractWidget
         );
     }
 
-    /**
-     * @param bool $isAddToCartDisabled
-     *
-     * @return void
-     */
     protected function addIsAddToCartDisabledParameter(bool $isAddToCartDisabled): void
     {
         $this->addParameter(static::PARAMETER_IS_ADD_TO_CART_DISABLED, $isAddToCartDisabled);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductQuantityStorageTransfer|null $productQuantityStorageTransfer
-     *
-     * @return void
-     */
     protected function addProductQuantityStorage(
         ?ProductQuantityStorageTransfer $productQuantityStorageTransfer = null
     ): void {
         $this->addParameter(static::PARAMETER_PRODUCT_QUANTITY_STORAGE, $productQuantityStorageTransfer);
     }
 
-    /**
-     * @return void
-     */
     protected function addNumberFormatConfigParameter(): void
     {
         $numberFormatConfig = $this->getFactory()

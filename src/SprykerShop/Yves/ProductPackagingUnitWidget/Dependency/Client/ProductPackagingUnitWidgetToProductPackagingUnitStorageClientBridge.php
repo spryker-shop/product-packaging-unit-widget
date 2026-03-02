@@ -25,21 +25,11 @@ class ProductPackagingUnitWidgetToProductPackagingUnitStorageClientBridge implem
         $this->productPackagingUnitStorageClient = $productPackagingUnitStorageClient;
     }
 
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer|null
-     */
     public function findProductPackagingUnitById(int $idProductConcrete): ?ProductPackagingUnitStorageTransfer
     {
         return $this->productPackagingUnitStorageClient->findProductPackagingUnitById($idProductConcrete);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function expandItemTransferWithDefaultPackagingUnit(ItemTransfer $itemTransfer): ItemTransfer
     {
         return $this->productPackagingUnitStorageClient->expandItemTransferWithDefaultPackagingUnit($itemTransfer);

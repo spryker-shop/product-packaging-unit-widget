@@ -12,17 +12,7 @@ use Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer;
 
 interface ProductPackagingUnitWidgetToProductPackagingUnitStorageClientInterface
 {
-    /**
-     * @param int $idProductConcrete
-     *
-     * @return \Generated\Shared\Transfer\ProductPackagingUnitStorageTransfer|null
-     */
     public function findProductPackagingUnitById(int $idProductConcrete): ?ProductPackagingUnitStorageTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return \Generated\Shared\Transfer\ItemTransfer
-     */
     public function expandItemTransferWithDefaultPackagingUnit(ItemTransfer $itemTransfer): ItemTransfer;
 }

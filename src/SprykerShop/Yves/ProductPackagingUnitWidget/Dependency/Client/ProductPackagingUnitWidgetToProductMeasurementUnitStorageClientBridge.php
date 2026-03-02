@@ -26,33 +26,18 @@ class ProductPackagingUnitWidgetToProductMeasurementUnitStorageClientBridge impl
         $this->productMeasurementUnitStorageClient = $productMeasurementUnitStorageClient;
     }
 
-    /**
-     * @param int $idProductMeasurementUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitStorageTransfer|null
-     */
     public function findProductMeasurementUnitStorage(
         int $idProductMeasurementUnit
     ): ?ProductMeasurementUnitStorageTransfer {
         return $this->productMeasurementUnitStorageClient->findProductMeasurementUnitStorage($idProductMeasurementUnit);
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return \Generated\Shared\Transfer\ProductConcreteMeasurementUnitStorageTransfer|null
-     */
     public function findProductConcreteMeasurementUnitStorage(
         int $idProduct
     ): ?ProductConcreteMeasurementUnitStorageTransfer {
         return $this->productMeasurementUnitStorageClient->findProductConcreteMeasurementUnitStorage($idProduct);
     }
 
-    /**
-     * @param int $idProductMeasurementUnit
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer|null
-     */
     public function findProductMeasurementUnit(int $idProductMeasurementUnit): ?ProductMeasurementUnitTransfer
     {
         return $this->productMeasurementUnitStorageClient->findProductMeasurementUnit($idProductMeasurementUnit);
@@ -68,11 +53,6 @@ class ProductPackagingUnitWidgetToProductMeasurementUnitStorageClientBridge impl
         return $this->productMeasurementUnitStorageClient->findProductMeasurementSalesUnitByIdProduct($idProduct);
     }
 
-    /**
-     * @param int $idProduct
-     *
-     * @return \Generated\Shared\Transfer\ProductMeasurementUnitTransfer|null
-     */
     public function findProductMeasurementBaseUnitByIdProduct(int $idProduct): ?ProductMeasurementUnitTransfer
     {
         return $this->productMeasurementUnitStorageClient->findProductMeasurementBaseUnitByIdProduct($idProduct);
