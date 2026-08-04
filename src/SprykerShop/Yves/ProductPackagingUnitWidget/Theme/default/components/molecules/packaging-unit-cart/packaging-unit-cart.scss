@@ -1,8 +1,15 @@
+@use 'sass:meta';
+@use 'sass:map';
+
 @mixin product-packaging-unit-widget-packaging-unit-cart($name: '.packaging-unit-cart') {
     #{$name} {
+        @if meta.mixin-exists(product-packaging-unit-widget-packaging-unit-cart-base-hook) {
+            @include product-packaging-unit-widget-packaging-unit-cart-base-hook;
+        }
+
         &__item {
             &:not(:last-child) {
-                margin-bottom: map-get($setting-spacing, 'small');
+                margin-bottom: map.get($setting-spacing, 'small');
             }
         }
 
@@ -22,6 +29,10 @@
     @include product-packaging-unit-widget-packaging-unit-cart();
 
     #{$name} {
+        @if meta.mixin-exists(product-packaging-unit-packaging-unit-cart-base-hook) {
+            @include product-packaging-unit-packaging-unit-cart-base-hook;
+        }
+
         @content;
     }
 }

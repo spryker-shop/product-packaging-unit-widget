@@ -110,8 +110,6 @@ export default class PackagingUnitQuantitySelector extends Component {
     // eslint-disable-next-line @typescript-eslint/no-magic-numbers
     protected readonly degree: number[] = [2, 3];
 
-    protected readyCallback(): void {}
-
     protected async init(): Promise<void> {
         this.formattedQtyInSalesUnitInput = <FormattedNumberInput>(
             this.getElementsByClassName(`${this.jsName}__formatted-sales-unit-quantity`)[0]
